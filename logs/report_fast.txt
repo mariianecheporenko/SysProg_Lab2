@@ -1,0 +1,1371 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 543  of event 'cpu/cycles/P'
+# Event count (approx.): 12557891054
+#
+# Children      Self  Command    Shared Object         Symbol                                                                                                                                                                                                                                                                                                      
+# ........  ........  .........  ....................  ............................................................................................................................................................................................................................................................................................................
+#
+    98.89%     0.00%  prog_fast  prog_fast             [.] _start
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--95.21%--main
+               |          |          
+               |          |--92.19%--heavyComputation(std::vector<double, std::allocator<double> >&)
+               |          |          |          
+               |          |           --85.79%--std::abs(double) (inlined)
+               |          |                     |          
+               |          |                      --85.60%--__sincos_fma
+               |          |                                |          
+               |          |                                |--65.92%--libc_feholdsetround_sse_ctx (inlined)
+               |          |                                |          |          
+               |          |                                |           --0.56%--0xffffffffa7201a7f
+               |          |                                |          
+               |          |                                |--8.03%--do_cos (inlined)
+               |          |                                |          
+               |          |                                |--5.35%--do_sin (inlined)
+               |          |                                |          
+               |          |                                 --1.14%--reduce_sincos (inlined)
+               |          |          
+               |          |--0.94%--__munmap
+               |          |          0xffffffffa7200134
+               |          |          0xffffffffa70785aa
+               |          |          0xffffffffa60050c3
+               |          |          0xffffffffa63b134f
+               |          |          0xffffffffa63b11a7
+               |          |          0xffffffffa63b106e
+               |          |          0xffffffffa63b0d76
+               |          |          0xffffffffa63adfb1
+               |          |          0xffffffffa63a2211
+               |          |          0xffffffffa63a20fd
+               |          |          |          
+               |          |           --0.56%--0xffffffffa63a19df
+               |          |                     0xffffffffa63beae4
+               |          |          
+               |          |--0.58%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double) (inlined)
+               |          |          
+               |           --0.50%--sincos@plt
+               |          
+                --3.68%--__memset_avx512_unaligned_erms
+                          0xffffffffa72013cb
+                          |          
+                           --3.44%--0xffffffffa707e323
+                                     |          
+                                      --2.89%--0xffffffffa60a87c8
+                                                |          
+                                                 --2.71%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --2.60%--0xffffffffa63a7ed8
+                                                                      |          
+                                                                       --0.78%--0xffffffffa63a07b8
+                                                                                 |          
+                                                                                  --0.56%--0xffffffffa6433051
+
+    98.89%     0.00%  prog_fast  libc.so.6             [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--95.21%--main
+               |          |          
+               |          |--92.19%--heavyComputation(std::vector<double, std::allocator<double> >&)
+               |          |          |          
+               |          |           --85.79%--std::abs(double) (inlined)
+               |          |                     |          
+               |          |                      --85.60%--__sincos_fma
+               |          |                                |          
+               |          |                                |--65.92%--libc_feholdsetround_sse_ctx (inlined)
+               |          |                                |          |          
+               |          |                                |           --0.56%--0xffffffffa7201a7f
+               |          |                                |          
+               |          |                                |--8.03%--do_cos (inlined)
+               |          |                                |          
+               |          |                                |--5.35%--do_sin (inlined)
+               |          |                                |          
+               |          |                                 --1.14%--reduce_sincos (inlined)
+               |          |          
+               |          |--0.94%--__munmap
+               |          |          0xffffffffa7200134
+               |          |          0xffffffffa70785aa
+               |          |          0xffffffffa60050c3
+               |          |          0xffffffffa63b134f
+               |          |          0xffffffffa63b11a7
+               |          |          0xffffffffa63b106e
+               |          |          0xffffffffa63b0d76
+               |          |          0xffffffffa63adfb1
+               |          |          0xffffffffa63a2211
+               |          |          0xffffffffa63a20fd
+               |          |          |          
+               |          |           --0.56%--0xffffffffa63a19df
+               |          |                     0xffffffffa63beae4
+               |          |          
+               |          |--0.58%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double) (inlined)
+               |          |          
+               |           --0.50%--sincos@plt
+               |          
+                --3.68%--__memset_avx512_unaligned_erms
+                          0xffffffffa72013cb
+                          |          
+                           --3.44%--0xffffffffa707e323
+                                     |          
+                                      --2.89%--0xffffffffa60a87c8
+                                                |          
+                                                 --2.71%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --2.60%--0xffffffffa63a7ed8
+                                                                      |          
+                                                                       --0.78%--0xffffffffa63a07b8
+                                                                                 |          
+                                                                                  --0.56%--0xffffffffa6433051
+
+    98.89%     0.00%  prog_fast  libc.so.6             [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--95.21%--main
+               |          |          
+               |          |--92.19%--heavyComputation(std::vector<double, std::allocator<double> >&)
+               |          |          |          
+               |          |           --85.79%--std::abs(double) (inlined)
+               |          |                     |          
+               |          |                      --85.60%--__sincos_fma
+               |          |                                |          
+               |          |                                |--65.92%--libc_feholdsetround_sse_ctx (inlined)
+               |          |                                |          |          
+               |          |                                |           --0.56%--0xffffffffa7201a7f
+               |          |                                |          
+               |          |                                |--8.03%--do_cos (inlined)
+               |          |                                |          
+               |          |                                |--5.35%--do_sin (inlined)
+               |          |                                |          
+               |          |                                 --1.14%--reduce_sincos (inlined)
+               |          |          
+               |          |--0.94%--__munmap
+               |          |          0xffffffffa7200134
+               |          |          0xffffffffa70785aa
+               |          |          0xffffffffa60050c3
+               |          |          0xffffffffa63b134f
+               |          |          0xffffffffa63b11a7
+               |          |          0xffffffffa63b106e
+               |          |          0xffffffffa63b0d76
+               |          |          0xffffffffa63adfb1
+               |          |          0xffffffffa63a2211
+               |          |          0xffffffffa63a20fd
+               |          |          |          
+               |          |           --0.56%--0xffffffffa63a19df
+               |          |                     0xffffffffa63beae4
+               |          |          
+               |          |--0.58%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double) (inlined)
+               |          |          
+               |           --0.50%--sincos@plt
+               |          
+                --3.68%--__memset_avx512_unaligned_erms
+                          0xffffffffa72013cb
+                          |          
+                           --3.44%--0xffffffffa707e323
+                                     |          
+                                      --2.89%--0xffffffffa60a87c8
+                                                |          
+                                                 --2.71%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --2.60%--0xffffffffa63a7ed8
+                                                                      |          
+                                                                       --0.78%--0xffffffffa63a07b8
+                                                                                 |          
+                                                                                  --0.56%--0xffffffffa6433051
+
+    98.89%     0.00%  prog_fast  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+               |--95.21%--main
+               |          |          
+               |          |--92.19%--heavyComputation(std::vector<double, std::allocator<double> >&)
+               |          |          |          
+               |          |           --85.79%--std::abs(double) (inlined)
+               |          |                     |          
+               |          |                      --85.60%--__sincos_fma
+               |          |                                |          
+               |          |                                |--65.92%--libc_feholdsetround_sse_ctx (inlined)
+               |          |                                |          |          
+               |          |                                |           --0.56%--0xffffffffa7201a7f
+               |          |                                |          
+               |          |                                |--8.03%--do_cos (inlined)
+               |          |                                |          
+               |          |                                |--5.35%--do_sin (inlined)
+               |          |                                |          
+               |          |                                 --1.14%--reduce_sincos (inlined)
+               |          |          
+               |          |--0.94%--__munmap
+               |          |          0xffffffffa7200134
+               |          |          0xffffffffa70785aa
+               |          |          0xffffffffa60050c3
+               |          |          0xffffffffa63b134f
+               |          |          0xffffffffa63b11a7
+               |          |          0xffffffffa63b106e
+               |          |          0xffffffffa63b0d76
+               |          |          0xffffffffa63adfb1
+               |          |          0xffffffffa63a2211
+               |          |          0xffffffffa63a20fd
+               |          |          |          
+               |          |           --0.56%--0xffffffffa63a19df
+               |          |                     0xffffffffa63beae4
+               |          |          
+               |          |--0.58%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double) (inlined)
+               |          |          
+               |           --0.50%--sincos@plt
+               |          
+                --3.68%--__memset_avx512_unaligned_erms
+                          0xffffffffa72013cb
+                          |          
+                           --3.44%--0xffffffffa707e323
+                                     |          
+                                      --2.89%--0xffffffffa60a87c8
+                                                |          
+                                                 --2.71%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --2.60%--0xffffffffa63a7ed8
+                                                                      |          
+                                                                       --0.78%--0xffffffffa63a07b8
+                                                                                 |          
+                                                                                  --0.56%--0xffffffffa6433051
+
+    95.21%     1.18%  prog_fast  prog_fast             [.] main
+            |          
+            |--94.02%--main
+            |          |          
+            |          |--92.19%--heavyComputation(std::vector<double, std::allocator<double> >&)
+            |          |          |          
+            |          |           --85.79%--std::abs(double) (inlined)
+            |          |                     |          
+            |          |                      --85.60%--__sincos_fma
+            |          |                                |          
+            |          |                                |--65.92%--libc_feholdsetround_sse_ctx (inlined)
+            |          |                                |          |          
+            |          |                                |           --0.56%--0xffffffffa7201a7f
+            |          |                                |          
+            |          |                                |--8.03%--do_cos (inlined)
+            |          |                                |          
+            |          |                                |--5.35%--do_sin (inlined)
+            |          |                                |          
+            |          |                                 --1.14%--reduce_sincos (inlined)
+            |          |          
+            |          |--0.94%--__munmap
+            |          |          0xffffffffa7200134
+            |          |          0xffffffffa70785aa
+            |          |          0xffffffffa60050c3
+            |          |          0xffffffffa63b134f
+            |          |          0xffffffffa63b11a7
+            |          |          0xffffffffa63b106e
+            |          |          0xffffffffa63b0d76
+            |          |          0xffffffffa63adfb1
+            |          |          0xffffffffa63a2211
+            |          |          0xffffffffa63a20fd
+            |          |          |          
+            |          |           --0.56%--0xffffffffa63a19df
+            |          |                     0xffffffffa63beae4
+            |          |          
+            |           --0.50%--sincos@plt
+            |          
+             --1.18%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       main
+                       |          
+                        --0.58%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double) (inlined)
+
+    92.19%     6.59%  prog_fast  prog_fast             [.] heavyComputation(std::vector<double, std::allocator<double> >&)
+            |          
+            |--85.60%--heavyComputation(std::vector<double, std::allocator<double> >&)
+            |          std::abs(double) (inlined)
+            |          __sincos_fma
+            |          |          
+            |          |--65.92%--libc_feholdsetround_sse_ctx (inlined)
+            |          |          |          
+            |          |           --0.56%--0xffffffffa7201a7f
+            |          |          
+            |          |--8.03%--do_cos (inlined)
+            |          |          
+            |          |--5.35%--do_sin (inlined)
+            |          |          
+            |           --1.14%--reduce_sincos (inlined)
+            |          
+             --6.59%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       main
+                       heavyComputation(std::vector<double, std::allocator<double> >&)
+
+    85.98%    85.43%  prog_fast  libm.so.6             [.] __sincos_fma
+            |          
+            |--85.43%--_start
+            |          __libc_start_main_impl (inlined)
+            |          call_init (inlined)
+            |          __libc_start_call_main
+            |          main
+            |          |          
+            |           --85.04%--heavyComputation(std::vector<double, std::allocator<double> >&)
+            |                     std::abs(double) (inlined)
+            |                     __sincos_fma
+            |                     |          
+            |                     |--65.37%--libc_feholdsetround_sse_ctx (inlined)
+            |                     |          
+            |                     |--8.03%--do_cos (inlined)
+            |                     |          
+            |                     |--5.35%--do_sin (inlined)
+            |                     |          
+            |                      --1.14%--reduce_sincos (inlined)
+            |          
+             --0.56%--__sincos_fma
+                       libc_feholdsetround_sse_ctx (inlined)
+                       0xffffffffa7201a7f
+
+    85.79%     0.00%  prog_fast  prog_fast             [.] std::abs(double) (inlined)
+            |
+            ---std::abs(double) (inlined)
+               |          
+                --85.60%--__sincos_fma
+                          |          
+                          |--65.92%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          
+                          |           --0.56%--0xffffffffa7201a7f
+                          |          
+                          |--8.03%--do_cos (inlined)
+                          |          
+                          |--5.35%--do_sin (inlined)
+                          |          
+                           --1.14%--reduce_sincos (inlined)
+
+    65.92%     0.00%  prog_fast  libm.so.6             [.] libc_feholdsetround_sse_ctx (inlined)
+            |
+            ---libc_feholdsetround_sse_ctx (inlined)
+               |          
+                --0.56%--0xffffffffa7201a7f
+
+     8.03%     0.00%  prog_fast  libm.so.6             [.] do_cos (inlined)
+            |
+            ---do_cos (inlined)
+
+     5.35%     0.00%  prog_fast  libm.so.6             [.] do_sin (inlined)
+            |
+            ---do_sin (inlined)
+
+     3.68%     0.00%  prog_fast  libc.so.6             [.] __memset_avx512_unaligned_erms
+            |
+            ---__memset_avx512_unaligned_erms
+               0xffffffffa72013cb
+               |          
+                --3.44%--0xffffffffa707e323
+                          |          
+                           --2.89%--0xffffffffa60a87c8
+                                     |          
+                                      --2.71%--0xffffffffa63a7fd7
+                                                |          
+                                                 --2.60%--0xffffffffa63a7ed8
+                                                           |          
+                                                            --0.78%--0xffffffffa63a07b8
+                                                                      |          
+                                                                       --0.56%--0xffffffffa6433051
+
+     3.68%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa72013cb
+            |
+            ---0xffffffffa72013cb
+               |          
+                --3.44%--0xffffffffa707e323
+                          |          
+                           --2.89%--0xffffffffa60a87c8
+                                     |          
+                                      --2.71%--0xffffffffa63a7fd7
+                                                |          
+                                                 --2.60%--0xffffffffa63a7ed8
+                                                           |          
+                                                            --0.78%--0xffffffffa63a07b8
+                                                                      |          
+                                                                       --0.56%--0xffffffffa6433051
+
+     3.44%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707e323
+            |
+            ---0xffffffffa707e323
+               |          
+                --2.89%--0xffffffffa60a87c8
+                          |          
+                           --2.71%--0xffffffffa63a7fd7
+                                     |          
+                                      --2.60%--0xffffffffa63a7ed8
+                                                |          
+                                                 --0.78%--0xffffffffa63a07b8
+                                                           |          
+                                                            --0.56%--0xffffffffa6433051
+
+     2.89%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa60a87c8
+            |
+            ---0xffffffffa60a87c8
+               |          
+                --2.71%--0xffffffffa63a7fd7
+                          |          
+                           --2.60%--0xffffffffa63a7ed8
+                                     |          
+                                      --0.78%--0xffffffffa63a07b8
+                                                |          
+                                                 --0.56%--0xffffffffa6433051
+
+     2.71%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a7fd7
+            |
+            ---0xffffffffa63a7fd7
+               |          
+                --2.60%--0xffffffffa63a7ed8
+                          |          
+                           --0.78%--0xffffffffa63a07b8
+                                     |          
+                                      --0.56%--0xffffffffa6433051
+
+     2.60%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a7ed8
+            |
+            ---0xffffffffa63a7ed8
+               |          
+                --0.78%--0xffffffffa63a07b8
+                          |          
+                           --0.56%--0xffffffffa6433051
+
+     2.04%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa7200134
+            |
+            ---0xffffffffa7200134
+               0xffffffffa70785aa
+               |          
+               |--1.09%--0xffffffffa6004a1a
+               |          0xffffffffa6055687
+               |          0xffffffffa63afd01
+               |          0xffffffffa637e041
+               |          0xffffffffa63b3c8d
+               |          0xffffffffa63b3027
+               |          0xffffffffa63b106e
+               |          0xffffffffa63b0afb
+               |          0xffffffffa63b0798
+               |          0xffffffffa610e58b
+               |          0xffffffffa640a67e
+               |          0xffffffffa643242f
+               |          0xffffffffa707ee9b
+               |          0xffffffffa707ed7d
+               |          
+                --0.94%--0xffffffffa60050c3
+                          0xffffffffa63b134f
+                          0xffffffffa63b11a7
+                          0xffffffffa63b106e
+                          0xffffffffa63b0d76
+                          0xffffffffa63adfb1
+                          0xffffffffa63a2211
+                          0xffffffffa63a20fd
+                          |          
+                           --0.56%--0xffffffffa63a19df
+                                     0xffffffffa63beae4
+
+     2.04%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa70785aa
+            |
+            ---0xffffffffa70785aa
+               |          
+               |--1.09%--0xffffffffa6004a1a
+               |          0xffffffffa6055687
+               |          0xffffffffa63afd01
+               |          0xffffffffa637e041
+               |          0xffffffffa63b3c8d
+               |          0xffffffffa63b3027
+               |          0xffffffffa63b106e
+               |          0xffffffffa63b0afb
+               |          0xffffffffa63b0798
+               |          0xffffffffa610e58b
+               |          0xffffffffa640a67e
+               |          0xffffffffa643242f
+               |          0xffffffffa707ee9b
+               |          0xffffffffa707ed7d
+               |          
+                --0.94%--0xffffffffa60050c3
+                          0xffffffffa63b134f
+                          0xffffffffa63b11a7
+                          0xffffffffa63b106e
+                          0xffffffffa63b0d76
+                          0xffffffffa63adfb1
+                          0xffffffffa63a2211
+                          0xffffffffa63a20fd
+                          |          
+                           --0.56%--0xffffffffa63a19df
+                                     0xffffffffa63beae4
+
+     2.04%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b106e
+            |
+            ---0xffffffffa63b106e
+               |          
+               |--1.09%--0xffffffffa63b0afb
+               |          0xffffffffa63b0798
+               |          0xffffffffa610e58b
+               |          0xffffffffa640a67e
+               |          0xffffffffa643242f
+               |          0xffffffffa707ee9b
+               |          0xffffffffa707ed7d
+               |          
+                --0.94%--0xffffffffa63b0d76
+                          0xffffffffa63adfb1
+                          0xffffffffa63a2211
+                          0xffffffffa63a20fd
+                          |          
+                           --0.56%--0xffffffffa63a19df
+                                     0xffffffffa63beae4
+
+     1.34%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707ee9b
+            |
+            ---0xffffffffa707ee9b
+               |          
+                --1.09%--0xffffffffa707ed7d
+
+     1.14%     0.00%  prog_fast  libm.so.6             [.] reduce_sincos (inlined)
+            |
+            ---reduce_sincos (inlined)
+
+     1.09%     1.09%  prog_fast  [unknown]             [k] 0xffffffffa707ed7d
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_start_user
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---_dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_start_final (inlined)
+            |
+            ---_dl_start_final (inlined)
+               _dl_sysdep_start
+               dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] rtld_timer_accum (inlined)
+            |
+            ---rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] rtld_timer_stop (inlined)
+            |
+            ---rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+            |
+            ---_dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] __GI__dl_catch_exception (inlined)
+            |
+            ---__GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] set_catch (inlined)
+            |
+            ---set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] openaux
+            |
+            ---openaux
+               _dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_map_new_object
+            |
+            ---_dl_map_new_object
+               _dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_map_object_from_fd
+            |
+            ---_dl_map_object_from_fd
+               _dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] _dl_map_segments (inlined)
+            |
+            ---_dl_map_segments (inlined)
+               __mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  ld-linux-x86-64.so.2  [.] __mmap64 (inlined)
+            |
+            ---__mmap64 (inlined)
+               __mmap64 (inlined)
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6004a1a
+            |
+            ---0xffffffffa6004a1a
+               0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6055687
+            |
+            ---0xffffffffa6055687
+               0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63afd01
+            |
+            ---0xffffffffa63afd01
+               0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa637e041
+            |
+            ---0xffffffffa637e041
+               0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b3c8d
+            |
+            ---0xffffffffa63b3c8d
+               0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b3027
+            |
+            ---0xffffffffa63b3027
+               0xffffffffa63b106e
+               0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b0afb
+            |
+            ---0xffffffffa63b0afb
+               0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b0798
+            |
+            ---0xffffffffa63b0798
+               0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa610e58b
+            |
+            ---0xffffffffa610e58b
+               0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa640a67e
+            |
+            ---0xffffffffa640a67e
+               0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     1.09%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa643242f
+            |
+            ---0xffffffffa643242f
+               0xffffffffa707ee9b
+               0xffffffffa707ed7d
+
+     0.94%     0.00%  prog_fast  libc.so.6             [.] __munmap
+            |
+            ---__munmap
+               0xffffffffa7200134
+               0xffffffffa70785aa
+               0xffffffffa60050c3
+               0xffffffffa63b134f
+               0xffffffffa63b11a7
+               0xffffffffa63b106e
+               0xffffffffa63b0d76
+               0xffffffffa63adfb1
+               0xffffffffa63a2211
+               0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.94%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa60050c3
+            |
+            ---0xffffffffa60050c3
+               0xffffffffa63b134f
+               0xffffffffa63b11a7
+               0xffffffffa63b106e
+               0xffffffffa63b0d76
+               0xffffffffa63adfb1
+               0xffffffffa63a2211
+               0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.94%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b134f
+            |
+            ---0xffffffffa63b134f
+               0xffffffffa63b11a7
+               0xffffffffa63b106e
+               0xffffffffa63b0d76
+               0xffffffffa63adfb1
+               0xffffffffa63a2211
+               0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.94%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b11a7
+            |
+            ---0xffffffffa63b11a7
+               0xffffffffa63b106e
+               0xffffffffa63b0d76
+               0xffffffffa63adfb1
+               0xffffffffa63a2211
+               0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.94%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b0d76
+            |
+            ---0xffffffffa63b0d76
+               0xffffffffa63adfb1
+               0xffffffffa63a2211
+               0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.94%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63adfb1
+            |
+            ---0xffffffffa63adfb1
+               0xffffffffa63a2211
+               0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.94%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a2211
+            |
+            ---0xffffffffa63a2211
+               0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.94%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a20fd
+            |
+            ---0xffffffffa63a20fd
+               |          
+                --0.56%--0xffffffffa63a19df
+                          0xffffffffa63beae4
+
+     0.78%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a07b8
+            |
+            ---0xffffffffa63a07b8
+               |          
+                --0.56%--0xffffffffa6433051
+
+     0.67%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa7201a7f
+            |
+            ---0xffffffffa7201a7f
+
+     0.60%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa642e4cb
+            |
+            ---0xffffffffa642e4cb
+
+     0.59%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa642e58f
+            |
+            ---0xffffffffa642e58f
+
+     0.58%     0.00%  prog_fast  prog_fast             [.] double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double) (inlined)
+            |
+            ---double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double) (inlined)
+
+     0.56%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a19df
+            |
+            ---0xffffffffa63a19df
+               0xffffffffa63beae4
+
+     0.56%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63beae4
+            |
+            ---0xffffffffa63beae4
+
+     0.56%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6433051
+            |
+            ---0xffffffffa6433051
+
+     0.50%     0.50%  prog_fast  prog_fast             [.] sincos@plt
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               sincos@plt
+
+     0.47%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a0799
+     0.38%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a1bed
+     0.38%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b4de4
+     0.38%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63b4943
+     0.38%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63dd400
+     0.37%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707cf5a
+     0.37%     0.37%  prog_fast  [unknown]             [k] 0xffffffffa707eda7
+     0.36%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63f64cd
+     0.36%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63d1c7a
+     0.36%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63d1436
+     0.33%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6431705
+     0.33%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a08cd
+     0.33%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63be77a
+     0.30%     0.30%  prog_fast  [unknown]             [k] 0xffffffffa642d443
+     0.29%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6082863
+     0.29%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6d644af
+     0.29%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa61e63b4
+     0.29%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa61e5184
+     0.29%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa61fb2d7
+     0.29%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa61faea8
+     0.24%     0.24%  prog_fast  [unknown]             [k] 0xffffffffa63be734
+     0.24%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707eed7
+     0.23%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a07e9
+     0.23%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63e4c76
+     0.22%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6433040
+     0.22%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa60a878c
+     0.22%     0.22%  prog_fast  [unknown]             [k] 0xffffffffa60a8667
+     0.22%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a08d8
+     0.22%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6368223
+     0.22%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6367505
+     0.22%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63673e7
+     0.22%     0.22%  prog_fast  [unknown]             [k] 0xffffffffa7304104
+     0.19%     0.00%  prog_fast  libm.so.6             [.] stmxcsr_inline_asm (inlined)
+     0.19%     0.19%  prog_fast  [unknown]             [k] 0xffffffffa6d64484
+     0.19%     0.00%  prog_fast  libm.so.6             [.] libc_feresetround_sse_ctx (inlined)
+     0.19%     0.19%  prog_fast  [unknown]             [k] 0xffffffffa64332ea
+     0.19%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa636702d
+     0.19%     0.19%  prog_fast  [unknown]             [k] 0xffffffffa642d42a
+     0.19%     0.19%  prog_fast  [unknown]             [k] 0xffffffffa642d497
+     0.19%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6367242
+     0.19%     0.19%  prog_fast  [unknown]             [k] 0xffffffffa61c4162
+     0.18%     0.18%  prog_fast  [unknown]             [k] 0xffffffffa639ee56
+     0.18%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a809d
+     0.18%     0.18%  prog_fast  [unknown]             [k] 0xffffffffa615a870
+     0.18%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707cf52
+     0.18%     0.18%  prog_fast  [unknown]             [k] 0xffffffffa708e0e6
+     0.18%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa61e47d9
+     0.18%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6165c3e
+     0.18%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa633b306
+     0.18%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63380fc
+     0.15%     0.15%  prog_fast  [unknown]             [k] 0xffffffffa63cece7
+     0.14%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707e334
+     0.14%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707e82f
+     0.14%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707e7cd
+     0.14%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa61d36ef
+     0.12%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6431726
+     0.12%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa642e751
+     0.12%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa642e687
+     0.12%     0.12%  prog_fast  [unknown]             [k] 0xffffffffa67ff615
+     0.12%     0.12%  prog_fast  [unknown]             [k] 0xffffffffa707ed97
+     0.12%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a08b0
+     0.12%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa68e7e89
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa6430826
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa61be670
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa707ee9c
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa636678d
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa63a5216
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa64316fd
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6430981
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa67ff629
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa642e53c
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa615a888
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a51a3
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa6191b8d
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa63a7836
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa617d660
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa60a872d
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707cfaf
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa61e476b
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa617d9b1
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa617d6f4
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa707e2f0
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa63f64c0
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa63cd75c
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63cef83
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa64305cf
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa61c4150
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa61be68f
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa642b95d
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa637ed02
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa642e4bb
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa638041a
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63667aa
+     0.11%     0.11%  prog_fast  [unknown]             [k] 0xffffffffa639f5db
+     0.11%     0.00%  prog_fast  [unknown]             [.] 0xffffffffa63a0ab6
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0x00007af7e64f7f0b
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa7200134
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa70785aa
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6003eb0
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6458b3b
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6457aef
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6456348
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa64d47c1
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6458582
+     0.02%     0.02%  perf-exec  [unknown]             [k] 0xffffffffa7066692
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa63428c2
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa7201a7f
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa707cfaf
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6082863
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6d644af
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa61e63b4
+     0.02%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa61e5156
+     0.00%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6011124
+     0.00%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6342a62
+     0.00%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa633d0a3
+     0.00%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa6334cda
+     0.00%     0.00%  perf-exec  [unknown]             [k] 0xffffffffa600d0f5
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

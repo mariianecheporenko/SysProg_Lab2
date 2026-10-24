@@ -1,0 +1,20 @@
+
+ Performance counter stats for './prog_fast':
+
+                 8      context-switches                 #      1.4 cs/sec  cs_per_second     
+                 0      cpu-migrations                   #      0.0 migrations/sec  migrations_per_second
+             58738      page-faults                      #  10257.7 faults/sec  page_faults_per_second
+           5726.25 msec task-clock                       #      1.0 CPUs  CPUs_utilized       
+          55075893      L1-dcache-load-misses            #      0.5 %  l1d_miss_rate            (42.78%)
+          18873195      branch-misses                    #      0.4 %  branch_miss_rate         (42.84%)
+        4524433686      branches                         #    790.1 M/sec  branch_frequency     (57.16%)
+       12508490910      cpu-cycles                       #      2.2 GHz  cycles_frequency       (57.24%)
+       40941637531      instructions                     #      3.3 instructions  insn_per_cycle  (57.22%)
+         529675875      stalled-cycles-frontend          #     0.04 frontend_cycles_idle        (57.16%)
+
+       5.727912727 seconds time elapsed
+
+       5.087550000 seconds user
+       0.639943000 seconds sys
+
+

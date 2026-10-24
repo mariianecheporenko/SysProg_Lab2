@@ -1,0 +1,20 @@
+
+ Performance counter stats for './prog_slow':
+
+                12      context-switches                 #      0.7 cs/sec  cs_per_second     
+                 1      cpu-migrations                   #      0.1 migrations/sec  migrations_per_second
+             58739      page-faults                      #   3505.5 faults/sec  page_faults_per_second
+          16756.15 msec task-clock                       #      1.0 CPUs  CPUs_utilized       
+          57902755      L1-dcache-load-misses            #      0.2 %  l1d_miss_rate            (42.93%)
+          19872431      branch-misses                    #      0.1 %  branch_miss_rate         (42.94%)
+       16257274780      branches                         #    970.2 M/sec  branch_frequency     (57.18%)
+       37944573726      cpu-cycles                       #      2.3 GHz  cycles_frequency       (57.16%)
+      117292099184      instructions                     #      3.1 instructions  insn_per_cycle  (57.07%)
+        3089125293      stalled-cycles-frontend          #     0.08 frontend_cycles_idle        (57.06%)
+
+      16.757984365 seconds time elapsed
+
+      16.085059000 seconds user
+       0.672546000 seconds sys
+
+

@@ -1,0 +1,967 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu/cycles/P'
+# Event count (approx.): 38088420676
+#
+# Children      Self  Command    Shared Object     Symbol                                                                                                                                                                                                                                                                                                      
+# ........  ........  .........  ................  ............................................................................................................................................................................................................................................................................................................
+#
+    99.89%     0.00%  prog_slow  prog_slow         [.] _start
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+                --99.85%--main
+                          |          
+                          |--74.22%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                          |          |          
+                          |          |--27.14%--__sin_fma
+                          |          |          |          
+                          |          |          |--7.76%--do_cos (inlined)
+                          |          |          |          
+                          |          |          |--7.65%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |          |--7.50%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--3.78%--do_sin (inlined)
+                          |          |          |          |          
+                          |          |          |           --2.96%--do_cos (inlined)
+                          |          |          |          
+                          |          |           --1.13%--reduce_sincos (inlined)
+                          |          |          
+                          |          |--21.97%--__cos_fma
+                          |          |          |          
+                          |          |          |--9.08%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--4.97%--do_cos (inlined)
+                          |          |          |          |          
+                          |          |          |           --3.42%--do_sin (inlined)
+                          |          |          |          
+                          |          |          |--8.03%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |           --3.03%--do_sin (inlined)
+                          |          |          
+                          |          |--12.59%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          |          
+                          |          |           --8.63%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |          |--2.78%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |           --1.52%--std::abs(double)
+                          |          
+                          |--14.18%--__ieee754_sqrt (inlined)
+                          |          
+                          |--3.73%--__sqrt
+                          |          
+                          |--2.52%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          
+                          |           --0.80%--std::vector<double, std::allocator<double> >::size() const
+                          |          
+                          |--1.65%--std::allocator<double>::~allocator() (inlined)
+                          |          std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+                          |          std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+                          |          double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+                          |          double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+                          |          double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+                          |          void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+                          |          void std::__fill_a1<double*, double>(double*, double*, double const&)
+                          |          |          
+                          |           --1.32%--0xffffffffa72013cb
+                          |                     |          
+                          |                      --0.91%--0xffffffffa707e323
+                          |                                |          
+                          |                                 --0.79%--0xffffffffa60a87c8
+                          |                                           |          
+                          |                                            --0.75%--0xffffffffa63a7fd7
+                          |                                                      |          
+                          |                                                       --0.71%--0xffffffffa63a7ed8
+                          |          
+                          |--1.39%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          
+                           --0.95%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double)
+
+    99.89%     0.00%  prog_slow  libc.so.6         [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+                --99.85%--main
+                          |          
+                          |--74.22%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                          |          |          
+                          |          |--27.14%--__sin_fma
+                          |          |          |          
+                          |          |          |--7.76%--do_cos (inlined)
+                          |          |          |          
+                          |          |          |--7.65%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |          |--7.50%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--3.78%--do_sin (inlined)
+                          |          |          |          |          
+                          |          |          |           --2.96%--do_cos (inlined)
+                          |          |          |          
+                          |          |           --1.13%--reduce_sincos (inlined)
+                          |          |          
+                          |          |--21.97%--__cos_fma
+                          |          |          |          
+                          |          |          |--9.08%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--4.97%--do_cos (inlined)
+                          |          |          |          |          
+                          |          |          |           --3.42%--do_sin (inlined)
+                          |          |          |          
+                          |          |          |--8.03%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |           --3.03%--do_sin (inlined)
+                          |          |          
+                          |          |--12.59%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          |          
+                          |          |           --8.63%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |          |--2.78%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |           --1.52%--std::abs(double)
+                          |          
+                          |--14.18%--__ieee754_sqrt (inlined)
+                          |          
+                          |--3.73%--__sqrt
+                          |          
+                          |--2.52%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          
+                          |           --0.80%--std::vector<double, std::allocator<double> >::size() const
+                          |          
+                          |--1.65%--std::allocator<double>::~allocator() (inlined)
+                          |          std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+                          |          std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+                          |          double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+                          |          double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+                          |          double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+                          |          void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+                          |          void std::__fill_a1<double*, double>(double*, double*, double const&)
+                          |          |          
+                          |           --1.32%--0xffffffffa72013cb
+                          |                     |          
+                          |                      --0.91%--0xffffffffa707e323
+                          |                                |          
+                          |                                 --0.79%--0xffffffffa60a87c8
+                          |                                           |          
+                          |                                            --0.75%--0xffffffffa63a7fd7
+                          |                                                      |          
+                          |                                                       --0.71%--0xffffffffa63a7ed8
+                          |          
+                          |--1.39%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          
+                           --0.95%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double)
+
+    99.89%     0.00%  prog_slow  libc.so.6         [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_call_main
+               |          
+                --99.85%--main
+                          |          
+                          |--74.22%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                          |          |          
+                          |          |--27.14%--__sin_fma
+                          |          |          |          
+                          |          |          |--7.76%--do_cos (inlined)
+                          |          |          |          
+                          |          |          |--7.65%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |          |--7.50%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--3.78%--do_sin (inlined)
+                          |          |          |          |          
+                          |          |          |           --2.96%--do_cos (inlined)
+                          |          |          |          
+                          |          |           --1.13%--reduce_sincos (inlined)
+                          |          |          
+                          |          |--21.97%--__cos_fma
+                          |          |          |          
+                          |          |          |--9.08%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--4.97%--do_cos (inlined)
+                          |          |          |          |          
+                          |          |          |           --3.42%--do_sin (inlined)
+                          |          |          |          
+                          |          |          |--8.03%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |           --3.03%--do_sin (inlined)
+                          |          |          
+                          |          |--12.59%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          |          
+                          |          |           --8.63%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |          |--2.78%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |           --1.52%--std::abs(double)
+                          |          
+                          |--14.18%--__ieee754_sqrt (inlined)
+                          |          
+                          |--3.73%--__sqrt
+                          |          
+                          |--2.52%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          
+                          |           --0.80%--std::vector<double, std::allocator<double> >::size() const
+                          |          
+                          |--1.65%--std::allocator<double>::~allocator() (inlined)
+                          |          std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+                          |          std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+                          |          double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+                          |          double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+                          |          double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+                          |          void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+                          |          void std::__fill_a1<double*, double>(double*, double*, double const&)
+                          |          |          
+                          |           --1.32%--0xffffffffa72013cb
+                          |                     |          
+                          |                      --0.91%--0xffffffffa707e323
+                          |                                |          
+                          |                                 --0.79%--0xffffffffa60a87c8
+                          |                                           |          
+                          |                                            --0.75%--0xffffffffa63a7fd7
+                          |                                                      |          
+                          |                                                       --0.71%--0xffffffffa63a7ed8
+                          |          
+                          |--1.39%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          
+                           --0.95%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double)
+
+    99.89%     0.00%  prog_slow  libc.so.6         [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --99.85%--main
+                          |          
+                          |--74.22%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                          |          |          
+                          |          |--27.14%--__sin_fma
+                          |          |          |          
+                          |          |          |--7.76%--do_cos (inlined)
+                          |          |          |          
+                          |          |          |--7.65%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |          |--7.50%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--3.78%--do_sin (inlined)
+                          |          |          |          |          
+                          |          |          |           --2.96%--do_cos (inlined)
+                          |          |          |          
+                          |          |           --1.13%--reduce_sincos (inlined)
+                          |          |          
+                          |          |--21.97%--__cos_fma
+                          |          |          |          
+                          |          |          |--9.08%--do_sincos (inlined)
+                          |          |          |          |          
+                          |          |          |          |--4.97%--do_cos (inlined)
+                          |          |          |          |          
+                          |          |          |           --3.42%--do_sin (inlined)
+                          |          |          |          
+                          |          |          |--8.03%--libc_feholdsetround_sse_ctx (inlined)
+                          |          |          |          
+                          |          |           --3.03%--do_sin (inlined)
+                          |          |          
+                          |          |--12.59%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          |          
+                          |          |           --8.63%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |          |--2.78%--std::vector<double, std::allocator<double> >::size() const
+                          |          |          
+                          |           --1.52%--std::abs(double)
+                          |          
+                          |--14.18%--__ieee754_sqrt (inlined)
+                          |          
+                          |--3.73%--__sqrt
+                          |          
+                          |--2.52%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          
+                          |           --0.80%--std::vector<double, std::allocator<double> >::size() const
+                          |          
+                          |--1.65%--std::allocator<double>::~allocator() (inlined)
+                          |          std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+                          |          std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+                          |          double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+                          |          double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+                          |          double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+                          |          double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+                          |          void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+                          |          void std::__fill_a1<double*, double>(double*, double*, double const&)
+                          |          |          
+                          |           --1.32%--0xffffffffa72013cb
+                          |                     |          
+                          |                      --0.91%--0xffffffffa707e323
+                          |                                |          
+                          |                                 --0.79%--0xffffffffa60a87c8
+                          |                                           |          
+                          |                                            --0.75%--0xffffffffa63a7fd7
+                          |                                                      |          
+                          |                                                       --0.71%--0xffffffffa63a7ed8
+                          |          
+                          |--1.39%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          
+                           --0.95%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double)
+
+    99.85%     0.09%  prog_slow  prog_slow         [.] main
+            |          
+             --99.77%--main
+                       |          
+                       |--74.22%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                       |          |          
+                       |          |--27.14%--__sin_fma
+                       |          |          |          
+                       |          |          |--7.76%--do_cos (inlined)
+                       |          |          |          
+                       |          |          |--7.65%--libc_feholdsetround_sse_ctx (inlined)
+                       |          |          |          
+                       |          |          |--7.50%--do_sincos (inlined)
+                       |          |          |          |          
+                       |          |          |          |--3.78%--do_sin (inlined)
+                       |          |          |          |          
+                       |          |          |           --2.96%--do_cos (inlined)
+                       |          |          |          
+                       |          |           --1.13%--reduce_sincos (inlined)
+                       |          |          
+                       |          |--21.97%--__cos_fma
+                       |          |          |          
+                       |          |          |--9.08%--do_sincos (inlined)
+                       |          |          |          |          
+                       |          |          |          |--4.97%--do_cos (inlined)
+                       |          |          |          |          
+                       |          |          |           --3.42%--do_sin (inlined)
+                       |          |          |          
+                       |          |          |--8.03%--libc_feholdsetround_sse_ctx (inlined)
+                       |          |          |          
+                       |          |           --3.03%--do_sin (inlined)
+                       |          |          
+                       |          |--12.59%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                       |          |          |          
+                       |          |           --8.63%--std::vector<double, std::allocator<double> >::size() const
+                       |          |          
+                       |          |--2.78%--std::vector<double, std::allocator<double> >::size() const
+                       |          |          
+                       |           --1.52%--std::abs(double)
+                       |          
+                       |--14.18%--__ieee754_sqrt (inlined)
+                       |          
+                       |--3.73%--__sqrt
+                       |          
+                       |--2.52%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                       |          |          
+                       |           --0.80%--std::vector<double, std::allocator<double> >::size() const
+                       |          
+                       |--1.65%--std::allocator<double>::~allocator() (inlined)
+                       |          std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+                       |          std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+                       |          double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+                       |          double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+                       |          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+                       |          double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+                       |          double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+                       |          void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+                       |          void std::__fill_a1<double*, double>(double*, double*, double const&)
+                       |          |          
+                       |           --1.32%--0xffffffffa72013cb
+                       |                     |          
+                       |                      --0.91%--0xffffffffa707e323
+                       |                                |          
+                       |                                 --0.79%--0xffffffffa60a87c8
+                       |                                           |          
+                       |                                            --0.75%--0xffffffffa63a7fd7
+                       |                                                      |          
+                       |                                                       --0.71%--0xffffffffa63a7ed8
+                       |          
+                       |--1.39%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                       |          
+                        --0.95%--double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double)
+
+    74.22%     8.22%  prog_slow  prog_slow         [.] heavyComputation(std::vector<double, std::allocator<double> >&)
+            |          
+            |--66.00%--heavyComputation(std::vector<double, std::allocator<double> >&)
+            |          |          
+            |          |--27.14%--__sin_fma
+            |          |          |          
+            |          |          |--7.76%--do_cos (inlined)
+            |          |          |          
+            |          |          |--7.65%--libc_feholdsetround_sse_ctx (inlined)
+            |          |          |          
+            |          |          |--7.50%--do_sincos (inlined)
+            |          |          |          |          
+            |          |          |          |--3.78%--do_sin (inlined)
+            |          |          |          |          
+            |          |          |           --2.96%--do_cos (inlined)
+            |          |          |          
+            |          |           --1.13%--reduce_sincos (inlined)
+            |          |          
+            |          |--21.97%--__cos_fma
+            |          |          |          
+            |          |          |--9.08%--do_sincos (inlined)
+            |          |          |          |          
+            |          |          |          |--4.97%--do_cos (inlined)
+            |          |          |          |          
+            |          |          |           --3.42%--do_sin (inlined)
+            |          |          |          
+            |          |          |--8.03%--libc_feholdsetround_sse_ctx (inlined)
+            |          |          |          
+            |          |           --3.03%--do_sin (inlined)
+            |          |          
+            |          |--12.59%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          |          
+            |          |           --8.63%--std::vector<double, std::allocator<double> >::size() const
+            |          |          
+            |          |--2.78%--std::vector<double, std::allocator<double> >::size() const
+            |          |          
+            |           --1.52%--std::abs(double)
+            |          
+             --8.22%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       main
+                       heavyComputation(std::vector<double, std::allocator<double> >&)
+
+    27.39%    27.20%  prog_slow  libm.so.6         [.] __sin_fma
+            |          
+             --27.20%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       main
+                       |          
+                        --26.95%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                                  __sin_fma
+                                  |          
+                                  |--7.76%--do_cos (inlined)
+                                  |          
+                                  |--7.50%--do_sincos (inlined)
+                                  |          |          
+                                  |          |--3.78%--do_sin (inlined)
+                                  |          |          
+                                  |           --2.96%--do_cos (inlined)
+                                  |          
+                                  |--7.46%--libc_feholdsetround_sse_ctx (inlined)
+                                  |          
+                                   --1.13%--reduce_sincos (inlined)
+
+    22.16%    22.03%  prog_slow  libm.so.6         [.] __cos_fma
+            |          
+             --22.03%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       main
+                       |          
+                        --21.84%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                                  __cos_fma
+                                  |          
+                                  |--9.08%--do_sincos (inlined)
+                                  |          |          
+                                  |          |--4.97%--do_cos (inlined)
+                                  |          |          
+                                  |           --3.42%--do_sin (inlined)
+                                  |          
+                                  |--7.90%--libc_feholdsetround_sse_ctx (inlined)
+                                  |          
+                                   --3.03%--do_sin (inlined)
+
+    16.54%     7.05%  prog_slow  prog_slow         [.] std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          
+            |--9.49%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          
+            |           --9.42%--std::vector<double, std::allocator<double> >::size() const
+            |          
+             --7.05%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       |          
+                        --7.01%--main
+                                  |          
+                                  |--3.96%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                                  |          std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                  |          
+                                   --3.05%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    14.18%    14.18%  prog_slow  libm.so.6         [.] __sqrt_finite@GLIBC_2.15
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               __ieee754_sqrt (inlined)
+
+    14.18%     0.00%  prog_slow  libm.so.6         [.] __ieee754_sqrt (inlined)
+            |
+            ---__ieee754_sqrt (inlined)
+
+    12.21%    12.21%  prog_slow  prog_slow         [.] std::vector<double, std::allocator<double> >::size() const
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               |          
+               |--11.41%--heavyComputation(std::vector<double, std::allocator<double> >&)
+               |          |          
+               |          |--8.63%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          
+               |           --2.78%--std::vector<double, std::allocator<double> >::size() const
+               |          
+                --0.80%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::size() const
+
+    10.73%     0.00%  prog_slow  libm.so.6         [.] do_cos (inlined)
+            |
+            ---do_cos (inlined)
+
+     9.08%     0.00%  prog_slow  libm.so.6         [.] do_sincos (inlined)
+            |
+            ---do_sincos (inlined)
+               |          
+               |--4.97%--do_cos (inlined)
+               |          
+                --3.42%--do_sin (inlined)
+
+     8.03%     0.00%  prog_slow  libm.so.6         [.] libc_feholdsetround_sse_ctx (inlined)
+            |
+            ---libc_feholdsetround_sse_ctx (inlined)
+
+     7.65%     0.00%  prog_slow  libm.so.6         [.] libc_feholdsetround_sse_ctx (inlined)
+            |
+            ---libc_feholdsetround_sse_ctx (inlined)
+
+     7.50%     0.00%  prog_slow  libm.so.6         [.] do_sincos (inlined)
+            |
+            ---do_sincos (inlined)
+               |          
+               |--3.78%--do_sin (inlined)
+               |          
+                --2.96%--do_cos (inlined)
+
+     6.45%     0.00%  prog_slow  libm.so.6         [.] do_sin (inlined)
+            |
+            ---do_sin (inlined)
+
+     4.97%     0.00%  prog_slow  libm.so.6         [.] do_cos (inlined)
+            |
+            ---do_cos (inlined)
+
+     3.78%     0.00%  prog_slow  libm.so.6         [.] do_sin (inlined)
+            |
+            ---do_sin (inlined)
+
+     3.73%     3.73%  prog_slow  libm.so.6         [.] __sqrt
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               __sqrt
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+            |
+            ---std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+               std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+               double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+               double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+               double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+            |
+            ---std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+               double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+               double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+               double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+            |
+            ---double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+               double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+               double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+            |
+            ---double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+               double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.24%  prog_slow  prog_slow         [.] void std::__fill_a1<double*, double>(double*, double*, double const&)
+            |          
+             --1.41%--void std::__fill_a1<double*, double>(double*, double*, double const&)
+                       |          
+                        --1.32%--0xffffffffa72013cb
+                                  |          
+                                   --0.91%--0xffffffffa707e323
+                                             |          
+                                              --0.79%--0xffffffffa60a87c8
+                                                        |          
+                                                         --0.75%--0xffffffffa63a7fd7
+                                                                   |          
+                                                                    --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+            |
+            ---double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+               double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+            |
+            ---double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+               double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+            |
+            ---double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] std::allocator<double>::~allocator() (inlined)
+            |
+            ---std::allocator<double>::~allocator() (inlined)
+               std::vector<double, std::allocator<double> >::vector(unsigned long, std::allocator<double> const&)
+               std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long)
+               double* std::__uninitialized_default_n_a<double*, unsigned long, double>(double*, unsigned long, std::allocator<double>&)
+               double* std::__uninitialized_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long>(double*, unsigned long)
+               double* std::fill_n<double*, unsigned long, double>(double*, unsigned long, double const&) (inlined)
+               double* std::__fill_n_a<double*, unsigned long, double>(double*, unsigned long, double const&, std::random_access_iterator_tag) (inlined)
+               void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.65%     0.00%  prog_slow  prog_slow         [.] void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+            |
+            ---void std::__fill_a<double*, double>(double*, double*, double const&) (inlined)
+               void std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          
+                --1.32%--0xffffffffa72013cb
+                          |          
+                           --0.91%--0xffffffffa707e323
+                                     |          
+                                      --0.79%--0xffffffffa60a87c8
+                                                |          
+                                                 --0.75%--0xffffffffa63a7fd7
+                                                           |          
+                                                            --0.71%--0xffffffffa63a7ed8
+
+     1.58%     1.58%  prog_slow  prog_slow         [.] std::abs(double)
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               |          
+                --1.52%--heavyComputation(std::vector<double, std::allocator<double> >&)
+                          std::abs(double)
+
+     1.43%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa72013cb
+            |
+            ---0xffffffffa72013cb
+               |          
+                --1.01%--0xffffffffa707e323
+                          |          
+                           --0.79%--0xffffffffa60a87c8
+                                     |          
+                                      --0.75%--0xffffffffa63a7fd7
+                                                |          
+                                                 --0.71%--0xffffffffa63a7ed8
+
+     1.13%     0.00%  prog_slow  libm.so.6         [.] reduce_sincos (inlined)
+            |
+            ---reduce_sincos (inlined)
+
+     1.01%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa707e323
+            |
+            ---0xffffffffa707e323
+               |          
+                --0.79%--0xffffffffa60a87c8
+                          |          
+                           --0.75%--0xffffffffa63a7fd7
+                                     |          
+                                      --0.71%--0xffffffffa63a7ed8
+
+     0.95%     0.95%  prog_slow  prog_slow         [.] double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double)
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               double std::accumulate<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double)
+
+     0.86%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa63a7fd7
+            |
+            ---0xffffffffa63a7fd7
+               |          
+                --0.82%--0xffffffffa63a7ed8
+
+     0.82%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa63a7ed8
+            |
+            ---0xffffffffa63a7ed8
+
+     0.79%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa60a87c8
+            |
+            ---0xffffffffa60a87c8
+               |          
+                --0.75%--0xffffffffa63a7fd7
+                          |          
+                           --0.71%--0xffffffffa63a7ed8
+
+     0.44%     0.00%  prog_slow  libm.so.6         [.] reduce_sincos (inlined)
+     0.42%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa7200134
+     0.42%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa70785aa
+     0.41%     0.41%  prog_slow  [unknown]         [k] 0xffffffffa707e2f3
+     0.38%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa7201a7f
+     0.38%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa63a0799
+     0.32%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa707cf5a
+     0.32%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6082863
+     0.32%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6d644af
+     0.31%     0.00%  prog_slow  prog_slow         [.] std::vector<double, std::allocator<double> >::~vector()
+     0.31%     0.00%  prog_slow  prog_slow         [.] std::_Vector_base<double, std::allocator<double> >::~_Vector_base()
+     0.31%     0.00%  prog_slow  prog_slow         [.] std::_Vector_base<double, std::allocator<double> >::_M_deallocate(double*, unsigned long)
+     0.31%     0.00%  prog_slow  prog_slow         [.] std::allocator_traits<std::allocator<double> >::deallocate(std::allocator<double>&, double*, unsigned long) (inlined)
+     0.31%     0.00%  prog_slow  prog_slow         [.] std::__new_allocator<double>::deallocate(double*, unsigned long)
+     0.31%     0.00%  prog_slow  libc.so.6         [.] __munmap
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa60050c3
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63b134f
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63b11a7
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63b106e
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63b0d76
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63adfb1
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a2211
+     0.31%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a20fd
+     0.25%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61e63b4
+     0.25%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61e5184
+     0.23%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63f64cd
+     0.23%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63d1c7a
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63d1436
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61fb2d7
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61faea8
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61e47d9
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a1bed
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63b4de4
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63b4943
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63dd400
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6367242
+     0.19%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa642e4cb
+     0.13%     0.13%  prog_slow  prog_slow         [.] sqrt@plt
+     0.13%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6165c73
+     0.13%     0.13%  prog_slow  prog_slow         [.] sin@plt
+     0.13%     0.00%  prog_slow  prog_slow         [.] bool __gnu_cxx::operator!=<double*, std::vector<double, std::allocator<double> > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > const&, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > const&) (inlined)
+     0.12%     0.12%  prog_slow  [unknown]         [k] 0xffffffffa642d4ad
+     0.12%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a07b8
+     0.12%     0.12%  prog_slow  [unknown]         [k] 0xffffffffa70740db
+     0.11%     0.11%  prog_slow  [unknown]         [k] 0xffffffffa63f64c0
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0x000076e72a4f7f0b
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa6003eb0
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa6458b3b
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa6457aef
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa6456348
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa64d5330
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa6841a34
+     0.11%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa60a8879
+     0.10%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa642e58f
+     0.10%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa642e4bb
+     0.09%     0.09%  prog_slow  [unknown]         [k] 0xffffffffa72013a0
+     0.08%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6433051
+     0.08%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6431705
+     0.08%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa60a878c
+     0.07%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa600d0f5
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa615f196
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61727f9
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa620486d
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6204428
+     0.06%     0.06%  prog_slow  prog_slow         [.] cos@plt
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa6011124
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6165c3e
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa633b306
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6338278
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa61726df
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa611bdb1
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa707cf5f
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa708e0e6
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61fb293
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61fb230
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61fb0d9
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa62193d1
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa642d49e
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa63a16eb
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa605aa34
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61e632a
+     0.06%     0.06%  prog_slow  [unknown]         [k] 0xffffffffa637ed30
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a19df
+     0.06%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63beae4
+     0.05%     0.05%  prog_slow  [unknown]         [k] 0xffffffffa6430859
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa60ab880
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa68e7e8d
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a08b0
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa7304104
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a09dd
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63a08b5
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63a818a
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63a0a1a
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa70576aa
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a517c
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa70577aa
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa636669a
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a08d8
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6368223
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6367505
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa637ed02
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63a08cd
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa63be77a
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63a7884
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63d13b0
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa7304109
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63f64c3
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa60a8667
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa642b92a
+     0.04%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6433040
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63a5195
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa63cef45
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa6430981
+     0.04%     0.04%  prog_slow  [unknown]         [k] 0xffffffffa6158b9c
+     0.00%     0.00%  prog_slow  [unknown]         [k] 0xffffffffa601111f
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa707cf6a
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa707e82f
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa707e7cd
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa61d3741
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa708674f
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa7085f3c
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa615c15f
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa633c8db
+     0.00%     0.00%  prog_slow  [unknown]         [.] 0xffffffffa6334cda
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa7304109
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0x000076e72a4f7f0b
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa7200134
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa70785aa
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa6003eb0
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa6458b3b
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa6457aef
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa6456348
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa64d47c1
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa6458582
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa6342a62
+     0.00%     0.00%  perf-exec  [unknown]         [k] 0xffffffffa633d0a3
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
